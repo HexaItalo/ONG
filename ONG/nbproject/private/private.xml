@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/Main.java</file>
-            <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/database/ConexaoMySQL.java</file>
+            <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/controller/VoluntarioController.java</file>
             <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/model/Voluntario.java</file>
             <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/view/TelaVoluntario.java</file>
-            <file>file:/C:/Users/0borg/OneDrive/Documentos/NetBeansProjects/ONG/src/controller/VoluntarioController.java</file>
         </group>
     </open-files>
 </project-private>

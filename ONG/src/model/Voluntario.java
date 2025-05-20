@@ -2,19 +2,20 @@ package model;
 
 public class Voluntario {
     private String nome;
-    private String contato;
+    private String email;
     private String areaAtuacao;
     private String disponibilidade;
 
-    public Voluntario(String nome, String contato, String areaAtuacao, String disponibilidade) {
+    public Voluntario(String nome, String email, String areaAtuacao, String disponibilidade) {
         this.nome = nome;
-        this.contato = contato;
+        this.email = email;
         this.areaAtuacao = areaAtuacao;
         this.disponibilidade = disponibilidade;
     }
 
     public String getNome() { return nome; }
-    public String getContato() { return contato; }
+    public String getEmail() { return email; }
     public String getAreaAtuacao() { return areaAtuacao; }
     public String getDisponibilidade() { return disponibilidade; }
+    
 }

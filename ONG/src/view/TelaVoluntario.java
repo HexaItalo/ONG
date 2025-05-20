@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 public class TelaVoluntario extends javax.swing.JFrame {
 
     JTextField txtNome;
-    JTextField txtContato;
+    JTextField txtEmail;
     JTextField txtArea;
     JTextField txtDisponibilidade;
     JTable tabela;
@@ -27,12 +27,12 @@ public class TelaVoluntario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         JLabel lblNome = new JLabel("Nome:");
-        JLabel lblContato = new JLabel("Contato:");
+        JLabel lblContato = new JLabel("Email:");
         JLabel lblArea = new JLabel("Área de Atuação:");
         JLabel lblDisponibilidade = new JLabel("Disponibilidade:");
 
         txtNome = new JTextField();
-        txtContato = new JTextField();
+        txtEmail = new JTextField();
         txtArea = new JTextField();
         txtDisponibilidade = new JTextField();
 
@@ -42,7 +42,7 @@ public class TelaVoluntario extends javax.swing.JFrame {
         txtNome.setBounds(150, 10, 350, 25);
 
         lblContato.setBounds(10, 45, 120, 25);
-        txtContato.setBounds(150, 45, 350, 25);
+        txtEmail.setBounds(150, 45, 350, 25);
 
         lblArea.setBounds(10, 80, 120, 25);
         txtArea.setBounds(150, 80, 350, 25);
@@ -53,14 +53,14 @@ public class TelaVoluntario extends javax.swing.JFrame {
         btnSalvar.setBounds(150, 150, 100, 30);
 
         add(lblNome); add(txtNome);
-        add(lblContato); add(txtContato);
+        add(lblContato); add(txtEmail);
         add(lblArea); add(txtArea);
         add(lblDisponibilidade); add(txtDisponibilidade);
         add(btnSalvar);
 
         modelo = new DefaultTableModel();
         modelo.addColumn("Nome");
-        modelo.addColumn("Contato");
+        modelo.addColumn("Email");
         modelo.addColumn("Área");
         modelo.addColumn("Disponibilidade");
 
@@ -78,7 +78,7 @@ public class TelaVoluntario extends javax.swing.JFrame {
     for (Voluntario v : controller.listarVoluntarios()) {
         modelo.addRow(new Object[]{
             v.getNome(),
-            v.getContato(),
+            v.getEmail(),
             v.getAreaAtuacao(),
             v.getDisponibilidade()
         });
@@ -87,24 +87,24 @@ public class TelaVoluntario extends javax.swing.JFrame {
 
     private void salvarVoluntario() {
         String nome = txtNome.getText();
-        String contato = txtContato.getText();
+        String email = txtEmail.getText();
         String area = txtArea.getText();
         String disponibilidade = txtDisponibilidade.getText();
 
-        if (nome.isEmpty() || contato.isEmpty() || area.isEmpty() || disponibilidade.isEmpty()) {
+        if (nome.isEmpty() || email.isEmpty() || area.isEmpty() || disponibilidade.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
             return;
         }
 
-        Voluntario v = new Voluntario(nome, contato, area, disponibilidade);
+        Voluntario v = new Voluntario(nome, email, area, disponibilidade);
         controller.adicionarVoluntario(v);
-        modelo.addRow(new Object[]{nome, contato, area, disponibilidade});
+        modelo.addRow(new Object[]{nome, email, area, disponibilidade});
         limparCampos();
     }
 
     private void limparCampos() {
         txtNome.setText("");
-        txtContato.setText("");
+        txtEmail.setText("");
         txtArea.setText("");
         txtDisponibilidade.setText("");
     }
